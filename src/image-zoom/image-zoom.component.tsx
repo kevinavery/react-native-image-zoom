@@ -346,6 +346,8 @@ export default class ImageViewer extends React.Component<Props, State> {
                   // 越到下方，缩放越小
                   this.scale = this.scale - diffY / 1000;
                   this.animatedScale.setValue(this.scale);
+
+                  this.handleSwipingDown();
                 }
               }
             }
@@ -583,6 +585,14 @@ export default class ImageViewer extends React.Component<Props, State> {
         positionY: this.positionY,
         scale: this.scale,
         zoomCurrentDistance: this.zoomCurrentDistance
+      });
+    }
+  }
+
+  public handleSwipingDown() {
+    if (this.props.onSwipingDown) {
+      this.props.onSwipingDown({
+        offset: this.swipeDownOffset
       });
     }
   }

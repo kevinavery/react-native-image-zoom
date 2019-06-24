@@ -15,11 +15,15 @@ interface IOnMove {
   zoomCurrentDistance: number;
 }
 
+interface IOnSwipingDown {
+  offset: number;
+}
+
 export interface IOnClick {
-  locationX: number,
-  locationY: number,
-  pageX: number,
-  pageY: number
+  locationX: number;
+  locationY: number;
+  pageX: number;
+  pageY: number;
 }
 
 export class Props {
@@ -165,6 +169,13 @@ export class Props {
    * If provided, this method will be called when the onLayout event fires
    */
   public layoutChange?: (event?: object) => void = () => {
+    //
+  };
+
+  /**
+   * If provided, this will be called while swiping down
+   */
+  public onSwipingDown?: (position?: IOnSwipingDown) => void = () => {
     //
   };
 
