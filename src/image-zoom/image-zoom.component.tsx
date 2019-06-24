@@ -555,8 +555,11 @@ export default class ImageViewer extends React.Component<Props, State> {
     // 水平溢出量置空
     this.horizontalWholeOuterCounter = 0;
 
-    // swipeDown 溢出量置空
-    this.swipeDownOffset = 0;
+    if (this.swipeDownOffset !== 0) {
+      // swipeDown 溢出量置空
+      this.swipeDownOffset = 0;
+      this.handleSwipingDown();
+    }
 
     this.imageDidMove('onPanResponderRelease');
   };

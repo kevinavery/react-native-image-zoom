@@ -16,8 +16,8 @@ export default class App extends React.Component {
           <ImageZoom
             cropWidth={Dimensions.get('window').width}
             cropHeight={Dimensions.get('window').height}
-            imageWidth={Dimensions.get('window').width}
-            imageHeight={Dimensions.get('window').height}
+            imageWidth={Dimensions.get('window').width / 2}
+            imageHeight={Dimensions.get('window').height / 2}
             swipeDownThreshold={swipeDownThreshold}
             onSwipingDown={position => {
               let opacity = 1 - position.offset / swipeDownThreshold;
@@ -33,8 +33,8 @@ export default class App extends React.Component {
             <Image
               enableHorizontalBounce={true}
               style={{
-                width: Dimensions.get('window').width,
-                height: Dimensions.get('window').height
+                width: Dimensions.get('window').width / 2,
+                height: Dimensions.get('window').height / 2
               }}
               source={{
                 uri:
